@@ -1,26 +1,26 @@
-<script>
-export default{
-    data(){
-        return{
-            name : 'Tushar Bhardwaj',
-            status : true,
-            tasks : ['Task one','Task Two','Task Three'],
-            link : 'https://google.com',
-        };
-    },
-    methods:{
-        changeStatus(){
-            if(this.status === true){
-                this.status = false;
+<script setup>
+import {ref} from 'vue';
+
+
+        const name = ref("Tushar Bhardwaj");
+        const status =ref(true) ;
+        const tasks = ref(['Task one', 'Task two', 'Task three']);
+        const newTask = ref('heello');
+
+        const changeStatus = () =>{
+            if(status.value === true){
+                status.value = false;
+            } else {
+                status.value = true;
             }
-            else{
-                this.status = true;
-            };
-        
-        },
-    },
-};
+        };
+
+        const addTask = () =>{
+            if()
+        };
+
 </script>
+
 
 
 <template>
@@ -32,7 +32,13 @@ export default{
     <ul>
         <li v-for="task in tasks" :key="task">{{ task }}</li>
     </ul>
-    <a :href="link">Click for google</a>
+    <form @submit.prevent="addTask">
+        <label for="newTask">
+            <input type="text" id="NewTask" name="NewTask" v-model="newTask">
+            <button type="submit">submit</button>
+        </label>
+    </form>
+    <!-- <a :href="link">Click for google</a> -->
 </template>
 
 
