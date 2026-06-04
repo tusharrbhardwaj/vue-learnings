@@ -1,0 +1,12 @@
+### Add new task
+POST http://localhost:5501/tasks
+Content-Type: application/json
+
+{
+    "name" : "task name"
+}
+
+### Delete
+DELETE http://localhost:5501/tasks/3
+Content-Type: application/json
+
